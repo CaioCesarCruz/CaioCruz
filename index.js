@@ -16,6 +16,8 @@ var restaurantes = [
         "nome": "China in Box"
     }];
 
+var votos = [];
+
 app.get('/api/helloworld', function(req, res) {
     console.log(req.body);
     res.send('Hello World');
@@ -32,4 +34,12 @@ app.post('/api/CadastraRestaurante', function(req, res) {
     res.send(req.body);
 }); 
 
+app.post('/api/votarrestaurante', function(req, res) {
+    console.log(req.body);
+    votos.push(req.body);	
+    res.send(req.body);
+}); 
+
 app.listen(3000);
+
+
